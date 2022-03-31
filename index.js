@@ -1,7 +1,58 @@
-const url = "https://jsonplaceholder.typicode.com/todos";
+// const url = "https://jsonplaceholder.typicode.com/todos";
+
+//all 200 records
+
+// const getData = () => {
+//   axios({
+//     method: "get",
+//     url: "https://jsonplaceholder.typicode.com/todos",
+//   }).then((res) => showOutput(res));
+// };
+
+//only specific id record
+
+// const getData = () => {
+//   const config = {
+//     method: "get",
+//     url: "https://jsonplaceholder.typicode.com/todos",
+
+//     params: {
+//       id: 1,
+//     },
+//   };
+
+//   axios(config).then((res) => showOutput(res));
+// };
+
+// specific limit
+
+// const getData = () => {
+//   axios({
+//     method: "get",
+//     url: "https://jsonplaceholder.typicode.com/todos?_limit=5",
+//   }).then((res) => showOutput(res));
+// };
+
+// const getData = () => {
+//   axios({
+//     method: "get",
+//     url: "https://jsonplaceholder.typicode.com/todos",
+//     params: {
+//       _limit: 6,
+//     },
+//   }).then((res) => showOutput(res));
+// };
+
+//axios.get(url)
+
+//
+
+// call without method name by dfault it is get
 
 const getData = () => {
-  console.log("getData");
+  axios("https://jsonplaceholder.typicode.com/todos", {
+    params: { id: 3 },
+  }).then((res) => showOutput(res));
 };
 
 const addData = () => {
