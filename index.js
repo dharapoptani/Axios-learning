@@ -2,12 +2,12 @@
 
 //all 200 records
 
-// const getData = () => {
-//   axios({
-//     method: "get",
-//     url: "https://jsonplaceholder.typicode.com/todos",
-//   }).then((res) => showOutput(res));
-// };
+const getData = () => {
+  axios({
+    method: "get",
+    url: "https://jsonplaceholder.typicode.com/todos",
+  }).then((res) => showOutput(res));
+};
 
 //only specific id record
 
@@ -49,26 +49,82 @@
 
 // call without method name by dfault it is get
 
-const getData = () => {
-  axios("https://jsonplaceholder.typicode.com/todos", {
-    params: { id: 3 },
-  }).then((res) => showOutput(res));
-};
+// const getData = () => {
+//   axios("https://jsonplaceholder.typicode.com/todos", {
+//     params: { id: 3 },
+//   }).then((res) => showOutput(res));
+// };
+
+//POST Syntaxs
+
+// const addData = () => {
+//   axios({
+//     method: "post",
+//     url: "https://jsonplaceholder.typicode.com/todos",
+//     data: {
+//       title: "dhara popatni",
+//       completed: true,
+//     },
+//   }).then((res) => showOutput(res));
+// };
 
 const addData = () => {
-  console.log("addData");
+  axios
+    .post("https://jsonplaceholder.typicode.com/todos", {
+      title: "Rinkle popatni",
+      completed: true,
+    })
+    .then((res) => showOutput(res));
 };
+
+//PUT request
+
+// const updateWholeData = () => {
+//   axios({
+//     method: "put",
+//     url: "https://jsonplaceholder.typicode.com/todos/1",
+//     data: {
+//       title: "hello world",
+//       completed: true,
+//     },
+//   }).then((res) => showOutput(res));
+// };
 
 const updateWholeData = () => {
-  console.log("updateWholeData");
+  axios
+    .put("https://jsonplaceholder.typicode.com/todos/1", {
+      title: "hello world",
+      completed: true,
+    })
+    .then((res) => showOutput(res));
 };
 
+// PATCH request
+// const updateData = () => {
+//   axios({
+//     method: "patch",
+//     url: "https://jsonplaceholder.typicode.com/todos/1",
+//     data: {
+//       title: "hello world",
+//       completed: true,
+//     },
+//   }).then((res) => showOutput(res));
+// };
+
 const updateData = () => {
-  console.log("updateData");
+  axios
+    .patch("https://jsonplaceholder.typicode.com/todos/1", {
+      title: "hello world",
+      completed: true,
+    })
+    .then((res) => showOutput(res));
 };
 
 const removeData = () => {
-  console.log("removeData");
+  axios({
+    method: "delete",
+    url: "https://jsonplaceholder.typicode.com/todos/5",
+  }).then((res) => showOutput(res));
 };
 
 const showOutput = (res) => {
